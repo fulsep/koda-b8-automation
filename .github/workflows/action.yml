@@ -7,6 +7,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v6
+      - name: Setup nodejs version
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.4.0'
       - name: Installing node dependencies
         run: npm install
       - name: Running unit test script
