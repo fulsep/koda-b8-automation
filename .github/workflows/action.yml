@@ -15,3 +15,12 @@ jobs:
         run: npm install
       - name: Running unit test script
         run: npm run test
+  Shipping-Docker-Image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to docker
+        run: docker login ghcr.io
+      - name: Build images
+        run: docker build . -t ghcr.io/${{github.repository}}:latest
+      - name: Push to ghcr.io
+        run: docker push ghcr.io/${{github.repository}}:latest
