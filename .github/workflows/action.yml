@@ -16,10 +16,13 @@ jobs:
       - name: Running unit test script
         run: npm run test
   Shipping-Docker-Image:
+    needs: Unit-Test
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
       - name: Login to docker
-        run: docker login ghcr.io
+        run: echo -n ${{secrets.GITHUB_TOKEN}} | docker login ghcr.io --username ${{github.actor}} --password-stdin
       - name: Build images
         run: docker build . -t ghcr.io/${{github.repository}}:latest
       - name: Push to ghcr.io
