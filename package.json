@@ -1,0 +1,28 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fulsep/koda-b8-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/fulsep/koda-b8-automation/issues"
+  },
+  "homepage": "https://github.com/fulsep/koda-b8-automation#readme",
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "jest": "^30.4.2"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
+  }
+}

@@ -1,0 +1,13 @@
+name: Unit Test
+run-name: Running basic unit test
+on: [push]
+jobs:
+  Unit-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+      - name: Installing node dependencies
+        run: npm install
+      - name: Running unit test script
+        run: npm run test
